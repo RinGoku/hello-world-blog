@@ -27,24 +27,8 @@ const Config: ConfigProps = {
   ],
   navbarLinks: [
     {
-      text: "Link 1",
-      href: "#",
-    },
-    {
-      text: "Link 2",
-      href: "#",
-    },
-    {
-      text: "Link 3",
-      href: "#",
-    },
-    {
-      text: "Link 4",
-      href: "#",
-    },
-    {
-      text: "Link 5",
-      href: "#",
+      text: "Home",
+      href: "/",
     },
   ],
   blogDescription: "徒然とWeb技術系の話や日常を綴ります",

@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faTag } from "@fortawesome/free-solid-svg-icons";
 import { PostMetadata } from "../types/PostMetadata";
-import TagList from "./TagList";
+import TagList from "./tag-list";
 import { getBackgroundClass, getTextClass } from "../helpers/theme";
 import { getFormattedDate } from "../helpers/date";
 

@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import TagList from "./TagList";
+import TagList from "./tag-list";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
