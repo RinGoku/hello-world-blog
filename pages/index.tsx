@@ -1,34 +1,45 @@
-// pages/index.js
-import Link from "next/link";
-import { FC } from "react";
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import { FunctionComponent } from "react";
+import Hero from "../components/hero";
+import PostList from "../components/post-list";
+import { PostMetadata } from "../types/PostMetadata";
+import Layout from "../components/layout";
 import { client } from "../libs/client";
-import { Blog } from "../types";
 
-type HomeProps = { blogs: Blog[] };
+const posts: PostMetadata[] = [];
 
-const Home: FC<HomeProps> = ({ blogs }) => {
+const Home: FunctionComponent<HomeProps> = (props) => {
+  const { posts } = props;
+
   return (
-    <div>
-      <ul>
-        {blogs.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Layout>
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <Head>
+          <title>Welcome to my blog!</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main>
+          <Hero></Hero>
+          <div className="mt-4">
+            <PostList items={posts}></PostList>
+          </div>
+        </main>
+      </div>
+    </Layout>
   );
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
+type HomeProps = {
+  posts: PostMetadata[];
+};
+
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
 
   return {
     props: {
-      blogs: data.contents,
+      posts: data.contents,
     },
   };
 };

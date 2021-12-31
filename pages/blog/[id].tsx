@@ -1,22 +1,40 @@
-import { FC } from "react";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { ParsedUrlQuery } from "querystring";
+import { FunctionComponent } from "react";
+import { PostMetadata } from "../../types/PostMetadata";
+import Layout from "../../components/layout";
+import Head from "next/head";
+import PostHeader from "../../components/post-header";
+import { getProseClass } from "../../helpers/theme";
+import SeriesCard from "../../components/series-card";
 import { client } from "../../libs/client";
-import styles from "../../styles/Home.module.scss";
-import { Blog } from "../../types";
 
-type BlogIdProps = { blog: Blog };
-const BlogId: FC<BlogIdProps> = ({ blog }) => {
+const Post: FunctionComponent<PostProps> = (props) => {
+  const { post } = props;
+
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className="category">{blog.category?.name}</p>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-        className={styles.post}
-      />
-    </main>
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <Layout>
+        <article className="max-w-3xl md:mt-6 rounded-xl mx-auto bg-white dark:bg-cool-gray-800">
+          <img src={post.coverUrl} className="object-cover w-full h-auto" />
+          <div className="p-8">
+            <PostHeader post={post}></PostHeader>
+            {/* {post.series && (
+              <SeriesCard post={post} related={related}></SeriesCard>
+            )} */}
+            <div
+              className={`prose ${getProseClass(
+                post.theme
+              )} max-w-3xl mx-auto dark:text-cool-gray-100`}
+              dangerouslySetInnerHTML={{ __html: post.body }}
+            />
+          </div>
+        </article>
+      </Layout>
+    </>
   );
 };
 
@@ -35,9 +53,17 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      blog: data,
+      post: data,
     },
   };
 };
 
-export default BlogId;
+interface Params extends ParsedUrlQuery {
+  id: string;
+}
+
+type PostProps = {
+  post: PostMetadata;
+  // related: PostMetadata[];
+};
+export default Post;
