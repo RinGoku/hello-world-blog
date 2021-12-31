@@ -16,7 +16,7 @@ const Home: FunctionComponent<HomeProps> = (props) => {
     <Layout>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <Head>
-          <title>Welcome to my blog!</title>
+          <title>Hello, World! devブログ</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>

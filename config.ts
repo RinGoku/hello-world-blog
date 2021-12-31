@@ -47,7 +47,7 @@ const Config: ConfigProps = {
       href: "#",
     },
   ],
-  blogDescription: "I write tech articles about my side-projects",
+  blogDescription: "徒然とWeb技術系の話や日常を綴ります",
 };
 
 export default Config;
