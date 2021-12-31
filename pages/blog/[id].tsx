@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { FunctionComponent } from "react";
 import { PostMetadata } from "../../types/PostMetadata";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import Head from "next/head";
 import PostHeader from "../../components/post-header";
 import { getProseClass } from "../../helpers/theme";

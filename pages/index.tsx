@@ -4,8 +4,8 @@ import { FunctionComponent } from "react";
 import PostList from "../components/post-list";
 import { PostMetadata } from "../types/PostMetadata";
 import { client } from "../libs/client";
-import Hero from "../components/hero";
 import Layout from "../components/layout";
+import Hero from "../components/hero";
 
 const posts: PostMetadata[] = [];
 
