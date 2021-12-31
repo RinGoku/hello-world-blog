@@ -2,7 +2,7 @@ export type PostMetadata = {
   id: string;
   title: string;
   publishedAt: string;
-  coverUrl?: string;
+  coveredImage?: { width: number; height: number; url: string };
   body: string;
   tags?: string[];
   description?: string;

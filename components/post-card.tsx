@@ -9,19 +9,19 @@ type PostCardProps = {
   tags?: string[];
   title: string;
   description?: string;
-  coverUrl?: string;
+  coveredImage?: { url: string };
   publishedAt: string;
   id: string;
 };
 
 const PostCard: FunctionComponent<PostCardProps> = (props) => {
-  const { tags, title, description, coverUrl, publishedAt, id } = props;
+  const { tags, title, description, coveredImage, publishedAt, id } = props;
 
   return (
     <div className="relative">
       <div className="w-full h-full">
         <img
-          src={coverUrl}
+          src={coveredImage?.url}
           alt=""
           className="object-cover h-auto lg:h-44 w-full"
         />

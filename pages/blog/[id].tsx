@@ -19,7 +19,10 @@ const Post: FunctionComponent<PostProps> = (props) => {
       </Head>
       <Layout>
         <article className="max-w-3xl md:mt-6 rounded-xl mx-auto bg-white dark:bg-cool-gray-800">
-          <img src={post.coverUrl} className="object-cover w-full h-auto" />
+          <img
+            src={post.coveredImage?.url}
+            className="object-cover w-full h-auto"
+          />
           <div className="p-8">
             <PostHeader post={post}></PostHeader>
             {/* {post.series && (

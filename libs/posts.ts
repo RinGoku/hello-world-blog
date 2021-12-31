@@ -35,7 +35,6 @@ const getPostData = async (id: string): Promise<PostMetadata> => {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
-
   // Combine the data with the id
   return {
     id,
