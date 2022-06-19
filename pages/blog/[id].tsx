@@ -18,11 +18,14 @@ const Post: FunctionComponent<PostProps> = (props) => {
         <title>{post.title}</title>
       </Head>
       <Layout>
+        .
         <article className="max-w-3xl md:mt-6 rounded-xl mx-auto bg-white dark:bg-cool-gray-800">
-          <img
-            src={post.coveredImage?.url}
-            className="object-cover w-full h-auto"
-          />
+          <div>
+            <img
+              src={post.coveredImage?.url}
+              className="object-contain w-full h-auto"
+            />
+          </div>
           <div className="p-8">
             <PostHeader post={post}></PostHeader>
             {/* {post.series && (

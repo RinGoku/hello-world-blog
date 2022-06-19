@@ -12,7 +12,7 @@ const PostList: FunctionComponent<PostListProps> = (props) => {
   return (
     <div className="mt-8">
       <h1 className="text-4xl mb-4 tracking-tight font-extrabold dark:text-cool-gray-100">
-        Recent <span className="text-indigo-500">posts</span>
+        Recent <span className="text-gray-500">posts</span>
       </h1>
       <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 grid-flow-row auto-rows-fr">
         {items.map((item) => (

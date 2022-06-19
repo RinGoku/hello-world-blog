@@ -22,7 +22,7 @@ const PostHeader: FunctionComponent<PostHeaderProps> = (props) => {
         ></FontAwesomeIcon>
         {getFormattedDate(post.publishedAt)}
       </time>
-      <h1 className="text-2xl md:text-3xl lg:text-4xl mb-6 dark:text-cool-gray-100">
+      <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl mb-6 dark:text-cool-gray-100">
         {post.title}
       </h1>
       {/* POST TAGS */}

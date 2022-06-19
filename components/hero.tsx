@@ -10,7 +10,7 @@ const Hero: FC<unknown> = () => {
           <SocialLinks height="h-7"></SocialLinks>
           <h1 className="text-4xl mt-4 tracking-tight font-extrabold text-cool-gray-900 dark:text-cool-gray-100 sm:text-5xl md:text-6xl">
             <span>Hello-World</span>
-            <span className="text-indigo-600 dark:text-indigo-500 xl:inline">
+            <span className="text-gray-600 dark:text-gray-500 xl:inline">
               .dev
             </span>
           </h1>

@@ -40,7 +40,7 @@ const getPostData = async (id: string): Promise<PostMetadata> => {
     id,
     body: contentHtml,
     ...matterResult.data,
-    theme: matterResult.data.theme || "indigo",
+    theme: matterResult.data.theme || "gray",
     tags: (matterResult.data.tags as string).trim().split(","),
   } as PostMetadata;
 };
