@@ -23,7 +23,7 @@ const PostCard: FunctionComponent<PostCardProps> = (props) => {
         <div className="w-full lg:h-44 bg-white">
           <img
             src={coveredImage?.url}
-            alt=""
+            alt="test"
             className="object-contain h-auto lg:h-44 w-full"
           />
         </div>
